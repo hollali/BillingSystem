@@ -2,7 +2,7 @@ from tkinter import *
 
 root=Tk()
 root.title("Reatail Billing System")
-root.geometry("1350x800")
+root.geometry("1350x820")
 root.iconbitmap('')
 headingLabel=Label(root,text="Retail Billing System",font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
 headingLabel.pack(fill=X)
@@ -153,15 +153,24 @@ spriteEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 spriteEntry.grid(row=5,column=1,pady=9,padx=10)
 
 billframe=Frame(productsFrame,bd=8,relief=GROOVE)
-billframe.grid(row=0,column=3)
+billframe.grid(row=0,column=3,padx=10)
 
 billareaLabel=Label(billframe,text='Bill Area',font=("times new roman",15,'bold'),bd=7,relief=GROOVE)
 billareaLabel.pack(fill=X)
 
 scrollbar=Scrollbar(billframe,orient=VERTICAL)
-scrollbar.pack(side=RIGHT)
-textarea=Text(billframe,height=18,width=60)
+scrollbar.pack(side=RIGHT,fill=Y)
+textarea=Text(billframe,height=18,width=60,yscrollcommand=scrollbar.set)
 textarea.pack()
+scrollbar.config(command=textarea.yview)
 
+billmenuFrame=LabelFrame(root,text='Bill Menu',font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
+billmenuFrame.pack()
+
+costmeticpriceLabel=Label(billmenuFrame,text='Costmetic Price:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+costmeticpriceLabel.grid(row=0,column=0,pady=9,padx=10,sticky="w")
+
+costmeticpriceEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+costmeticpriceEntry.grid(row=0,column=1,pady=9,padx=10)
 
 root.mainloop() 
