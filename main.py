@@ -155,9 +155,11 @@ spriteEntry.grid(row=5,column=1,pady=9,padx=10)
 billframe=Frame(productsFrame,bd=8,relief=GROOVE)
 billframe.grid(row=0,column=3)
 
-billareaLabel=Label(billframe,text='Label Area',font=("times new roman",15,'bold'),bd=7,relief=GROOVE)
+billareaLabel=Label(billframe,text='Bill Area',font=("times new roman",15,'bold'),bd=7,relief=GROOVE)
 billareaLabel.pack(fill=X)
 
+scrollbar=Scrollbar(billframe,orient=VERTICAL)
+scrollbar.pack(side=RIGHT)
 textarea=Text(billframe,height=18,width=60)
 textarea.pack()
 
