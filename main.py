@@ -50,4 +50,13 @@ facecreamEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,
 facecreamEntry.grid(row=1,column=1,pady=9,padx=10)
 
 
+facewashLabel=Label(cosmeticsFrame,text='Face Wash:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+facewashLabel.grid(row=2,column=0,pady=9,padx=10)
+
+facewashEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+facewashEntry.grid(row=2,column=1,pady=9,padx=10)
+
+
+
+
 root.mainloop() 
