@@ -32,7 +32,7 @@ searchButton=Button(customer_details_frame,text='SEARCH',font=('arial',12,'bold'
 searchButton.grid(row=0,column=6,padx=20,pady=8)
 
 productsFrame=Frame(root)
-productsFrame.pack(pady=10)
+productsFrame.pack()
 
 cosmeticsFrame=LabelFrame(productsFrame,text='Cosmestics',font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
 cosmeticsFrame.grid(row=0,column=0)
@@ -172,5 +172,53 @@ costmeticpriceLabel.grid(row=0,column=0,pady=9,padx=10,sticky="w")
 
 costmeticpriceEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 costmeticpriceEntry.grid(row=0,column=1,pady=9,padx=10)
+
+grocerypriceLabel=Label(billmenuFrame,text='Grocery Price:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+grocerypriceLabel.grid(row=1,column=0,pady=9,padx=10,sticky="w")
+
+grocerypriceEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+grocerypriceEntry.grid(row=1,column=1,pady=9,padx=10)
+
+drinkspriceLabel=Label(billmenuFrame,text='Cold Drinks Price:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+drinkspriceLabel.grid(row=2,column=0,pady=9,padx=10,sticky="w")
+
+drinkspriceEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+drinkspriceEntry.grid(row=2,column=1,pady=9,padx=10)
+
+costmetaxLabel=Label(billmenuFrame,text='Costmetic Tax:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+costmetaxLabel.grid(row=0,column=2,pady=9,padx=10,sticky="w")
+
+costmetaxEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+costmetaxEntry.grid(row=0,column=3,pady=9,padx=10)
+
+grocerytaxLabel=Label(billmenuFrame,text='Grocery Tax:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+grocerytaxLabel.grid(row=1,column=2,pady=9,padx=10,sticky="w")
+
+grocerytaxEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+grocerytaxEntry.grid(row=1,column=3,pady=9,padx=10)
+
+drinksTaxLabel=Label(billmenuFrame,text='Cold Drinks Tax:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+drinksTaxLabel.grid(row=2,column=2,pady=9,padx=10,sticky="w")
+
+drinksTaxEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+drinksTaxEntry.grid(row=2,column=3,pady=9,padx=10)
+
+buttonFrame=Frame(billmenuFrame,bd=8,relief=GROOVE)
+buttonFrame.grid(row=0,column=4,rowspan=3)
+
+totalButton=Button(buttonFrame,text='Total',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
+totalButton.grid(row=0,column=0,pady=20,padx=2)
+
+billButton=Button(buttonFrame,text='Bill',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
+billButton.grid(row=0,column=1,pady=20,padx=2)
+
+emailButton=Button(buttonFrame,text='Email',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
+emailButton.grid(row=0,column=2,pady=20,padx=2)
+
+printButton=Button(buttonFrame,text='Print',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
+printButton.grid(row=0,column=3,pady=20,padx=2)
+
+clearButton=Button(buttonFrame,text='Clear',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
+clearButton.grid(row=0,column=4,pady=20,padx=2)
 
 root.mainloop() 
