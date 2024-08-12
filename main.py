@@ -2,13 +2,13 @@ from tkinter import *
 
 root=Tk()
 root.title("Reatail Billing System")
-root.geometry("1270x685")
+root.geometry("1350x800")
 root.iconbitmap('')
 headingLabel=Label(root,text="Retail Billing System",font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
 headingLabel.pack(fill=X)
 
 customer_details_frame=LabelFrame(root,text="Customer Details",font=('times new roman',15,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
-customer_details_frame.pack(fill=X,pady=10)
+customer_details_frame.pack(fill=X)
 
 nameLabel=Label(customer_details_frame,text='Name:',font=('times new roman',15,'bold'),bg='gray20',fg='white')
 nameLabel.grid(row=0,column=0,padx=20)
@@ -28,11 +28,20 @@ billnumberLabel.grid(row=0,column=4,padx=20,pady=2)
 billnumberEntry=Entry(customer_details_frame,font=('arial',15),bd=7,width=18)
 billnumberEntry.grid(row=0,column=5,padx=8)
 
-searchButton=Button(customer_details_frame,text='SEARCH',font=('arial',12,'bold'),bd=7,width=10)
+searchButton=Button(customer_details_frame,text='SEARCH',font=('arial',12,'bold'),bd=7,width=8)
 searchButton.grid(row=0,column=6,padx=20,pady=8)
 
 productsFrame=Frame(root)
-productsFrame.pack()
+productsFrame.pack(pady=10)
+
+cosmeticsFrame=LabelFrame(productsFrame,text='Cosmestics',font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
+cosmeticsFrame.grid(row=0,column=0)
+
+bathsoapLabel=Label(cosmeticsFrame,text='Bath Soap:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+bathsoapLabel.grid(row=0,column=0)
+
+bathsoapEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+bathsoapEntry.grid(row=0,column=1)
 
 
 root.mainloop() 
