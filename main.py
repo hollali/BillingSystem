@@ -38,10 +38,16 @@ cosmeticsFrame=LabelFrame(productsFrame,text='Cosmestics',font=('times new roman
 cosmeticsFrame.grid(row=0,column=0)
 
 bathsoapLabel=Label(cosmeticsFrame,text='Bath Soap:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
-bathsoapLabel.grid(row=0,column=0)
+bathsoapLabel.grid(row=0,column=0,pady=9,padx=10)
 
 bathsoapEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
-bathsoapEntry.grid(row=0,column=1)
+bathsoapEntry.grid(row=0,column=1,pady=9,padx=10)
+
+facecreamLabel=Label(cosmeticsFrame,text='Face Cream:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+facecreamLabel.grid(row=1,column=0,pady=9,padx=10)
+
+facecreamEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+facecreamEntry.grid(row=1,column=1,pady=9,padx=10)
 
 
 root.mainloop() 
