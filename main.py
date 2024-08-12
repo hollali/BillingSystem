@@ -38,40 +38,50 @@ cosmeticsFrame=LabelFrame(productsFrame,text='Cosmestics',font=('times new roman
 cosmeticsFrame.grid(row=0,column=0)
 
 bathsoapLabel=Label(cosmeticsFrame,text='Bath Soap:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
-bathsoapLabel.grid(row=0,column=0,pady=9,padx=10)
+bathsoapLabel.grid(row=0,column=0,pady=9,padx=10,sticky="w")
 
 bathsoapEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 bathsoapEntry.grid(row=0,column=1,pady=9,padx=10)
 
 facecreamLabel=Label(cosmeticsFrame,text='Face Cream:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
-facecreamLabel.grid(row=1,column=0,pady=9,padx=10)
+facecreamLabel.grid(row=1,column=0,pady=9,padx=10,sticky="w")
 
 facecreamEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 facecreamEntry.grid(row=1,column=1,pady=9,padx=10)
 
 
 facewashLabel=Label(cosmeticsFrame,text='Face Wash:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
-facewashLabel.grid(row=2,column=0,pady=9,padx=10)
+facewashLabel.grid(row=2,column=0,pady=9,padx=10,sticky="w")
 
 facewashEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 facewashEntry.grid(row=2,column=1,pady=9,padx=10)
 
 hairsprayLabel=Label(cosmeticsFrame,text='Hair Spray:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
-hairsprayLabel.grid(row=3,column=0,pady=9,padx=10)
+hairsprayLabel.grid(row=3,column=0,pady=9,padx=10,sticky="w")
 
 hairsprayEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 hairsprayEntry.grid(row=3,column=1,pady=9,padx=10)
 
 hairgelLabel=Label(cosmeticsFrame,text='Hair Gel:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
-hairgelLabel.grid(row=4,column=0,pady=9,padx=10)
+hairgelLabel.grid(row=4,column=0,pady=9,padx=10,sticky="w")
 
 hairgelEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 hairgelEntry.grid(row=4,column=1,pady=9,padx=10)
 
 bodylotionLabel=Label(cosmeticsFrame,text='Body Lotion:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
-bodylotionLabel.grid(row=5,column=0,pady=9,padx=10)
+bodylotionLabel.grid(row=5,column=0,pady=9,padx=10,sticky="w")
 
 bodylotionEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 bodylotionEntry.grid(row=5,column=1,pady=9,padx=10)
+
+groceryFrame=LabelFrame(productsFrame,text='Grocery',font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
+groceryFrame.grid(row=0,column=1)
+
+riceLabel=Label(groceryFrame,text='Rice:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+riceLabel.grid(row=0,column=0,pady=9,padx=10,sticky="w")
+
+riceEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+riceEntry.grid(row=0,column=1,pady=9,padx=10)
+
 
 root.mainloop() 
