@@ -83,5 +83,83 @@ riceLabel.grid(row=0,column=0,pady=9,padx=10,sticky="w")
 riceEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 riceEntry.grid(row=0,column=1,pady=9,padx=10)
 
+oilLabel=Label(groceryFrame,text='Oil:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+oilLabel.grid(row=1,column=0,pady=9,padx=10,sticky="w")
+
+riceEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+riceEntry.grid(row=1,column=1,pady=9,padx=10)
+
+coffeeLabel=Label(groceryFrame,text='Coffee:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+coffeeLabel.grid(row=2,column=0,pady=9,padx=10,sticky="w")
+
+coffeeEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+coffeeEntry.grid(row=2,column=1,pady=9,padx=10)
+
+teaLabel=Label(groceryFrame,text='Tea:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+teaLabel.grid(row=3,column=0,pady=9,padx=10,sticky="w")
+
+teaEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+teaEntry.grid(row=3,column=1,pady=9,padx=10)
+
+sugarLabel=Label(groceryFrame,text='Sugar:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+sugarLabel.grid(row=4,column=0,pady=9,padx=10,sticky="w")
+
+sugarEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+sugarEntry.grid(row=4,column=1,pady=9,padx=10)
+
+wheatLabel=Label(groceryFrame,text='Rice:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+wheatLabel.grid(row=5,column=0,pady=9,padx=10,sticky="w")
+
+wheatEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+wheatEntry.grid(row=5,column=1,pady=9,padx=10)
+
+drinksFrame=LabelFrame(productsFrame,text='Cold Drinks',font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
+drinksFrame.grid(row=0,column=2)
+
+maazaLabel=Label(drinksFrame,text='Maaza:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+maazaLabel.grid(row=0,column=0,pady=9,padx=10,sticky="w")
+
+maazaEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+maazaEntry.grid(row=0,column=1,pady=9,padx=10)
+
+pepisLabel=Label(drinksFrame,text='Pepis:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+pepisLabel.grid(row=1,column=0,pady=9,padx=10,sticky="w")
+
+PepisEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+PepisEntry.grid(row=1,column=1,pady=9,padx=10)
+
+dewLabel=Label(drinksFrame,text='Dew:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+dewLabel.grid(row=2,column=0,pady=9,padx=10,sticky="w")
+
+dewEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+dewEntry.grid(row=2,column=1,pady=9,padx=10)
+
+fantaLabel=Label(drinksFrame,text='Fanta:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+fantaLabel.grid(row=3,column=0,pady=9,padx=10,sticky="w")
+
+fantaEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+fantaEntry.grid(row=3,column=1,pady=9,padx=10)
+
+cokeLabel=Label(drinksFrame,text='Coca Cola:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+cokeLabel.grid(row=4,column=0,pady=9,padx=10,sticky="w")
+
+cokeEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+cokeEntry.grid(row=4,column=1,pady=9,padx=10)
+
+spriteLabel=Label(drinksFrame,text='Sprite:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+spriteLabel.grid(row=5,column=0,pady=9,padx=10,sticky="w")
+
+spriteEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+spriteEntry.grid(row=5,column=1,pady=9,padx=10)
+
+billframe=Frame(productsFrame,bd=8,relief=GROOVE)
+billframe.grid(row=0,column=3)
+
+billareaLabel=Label(billframe,text='Label Area',font=("times new roman",15,'bold'),bd=7,relief=GROOVE)
+billareaLabel.pack(fill=X)
+
+textarea=Text(billframe,height=18,width=60)
+textarea.pack()
+
 
 root.mainloop() 
