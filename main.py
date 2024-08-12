@@ -56,7 +56,22 @@ facewashLabel.grid(row=2,column=0,pady=9,padx=10)
 facewashEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 facewashEntry.grid(row=2,column=1,pady=9,padx=10)
 
+hairsprayLabel=Label(cosmeticsFrame,text='Hair Spray:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+hairsprayLabel.grid(row=3,column=0,pady=9,padx=10)
 
+hairsprayEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+hairsprayEntry.grid(row=3,column=1,pady=9,padx=10)
 
+hairgelLabel=Label(cosmeticsFrame,text='Hair Gel:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+hairgelLabel.grid(row=4,column=0,pady=9,padx=10)
+
+hairgelEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+hairgelEntry.grid(row=4,column=1,pady=9,padx=10)
+
+bodylotionLabel=Label(cosmeticsFrame,text='Body Lotion:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+bodylotionLabel.grid(row=5,column=0,pady=9,padx=10)
+
+bodylotionEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+bodylotionEntry.grid(row=5,column=1,pady=9,padx=10)
 
 root.mainloop() 
