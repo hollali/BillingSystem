@@ -1,5 +1,16 @@
 from tkinter import * 
+#functionality
+def total():
+    soapprice=int(bathsoapEntry.get())*20
+    facecreamprice=int(facecreamEntry.get())*30
+    facewashprice=int(facewashEntry.get())*25
+    hairsprayprice=int(hairsprayEntry.get())*50
+    hairgelprice=int(hairgelEntry.get())*40
+    bodylotionprice=int(bodylotionEntry.get())*60
 
+    totalcosmeticprice=soapprice+facecreamprice+facewashprice+hairsprayprice+hairgelprice+bodylotionprice
+    costmeticpriceEntry.insert(0,'GHS'+str(totalcosmeticprice))
+# GUI Port
 root=Tk()
 root.title("Reatail Billing System")
 root.geometry("1350x820")
@@ -42,37 +53,42 @@ bathsoapLabel.grid(row=0,column=0,pady=9,padx=10,sticky="w")
 
 bathsoapEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 bathsoapEntry.grid(row=0,column=1,pady=9,padx=10)
+bathsoapEntry.insert(0,0)
 
 facecreamLabel=Label(cosmeticsFrame,text='Face Cream:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 facecreamLabel.grid(row=1,column=0,pady=9,padx=10,sticky="w")
 
 facecreamEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 facecreamEntry.grid(row=1,column=1,pady=9,padx=10)
-
+facecreamEntry.insert(0,0)
 
 facewashLabel=Label(cosmeticsFrame,text='Face Wash:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 facewashLabel.grid(row=2,column=0,pady=9,padx=10,sticky="w")
 
 facewashEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 facewashEntry.grid(row=2,column=1,pady=9,padx=10)
+facewashEntry.insert(0,0)
 
 hairsprayLabel=Label(cosmeticsFrame,text='Hair Spray:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 hairsprayLabel.grid(row=3,column=0,pady=9,padx=10,sticky="w")
 
 hairsprayEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 hairsprayEntry.grid(row=3,column=1,pady=9,padx=10)
+hairsprayEntry.insert(0,0)
 
 hairgelLabel=Label(cosmeticsFrame,text='Hair Gel:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 hairgelLabel.grid(row=4,column=0,pady=9,padx=10,sticky="w")
 
 hairgelEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 hairgelEntry.grid(row=4,column=1,pady=9,padx=10)
+hairgelEntry.insert(0,0)
 
 bodylotionLabel=Label(cosmeticsFrame,text='Body Lotion:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 bodylotionLabel.grid(row=5,column=0,pady=9,padx=10,sticky="w")
 
 bodylotionEntry=Entry(cosmeticsFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 bodylotionEntry.grid(row=5,column=1,pady=9,padx=10)
+bodylotionEntry.insert(0,0)
 
 groceryFrame=LabelFrame(productsFrame,text='Grocery',font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
 groceryFrame.grid(row=0,column=1)
@@ -206,7 +222,7 @@ drinksTaxEntry.grid(row=2,column=3,pady=9,padx=10)
 buttonFrame=Frame(billmenuFrame,bd=8,relief=GROOVE)
 buttonFrame.grid(row=0,column=4,rowspan=3)
 
-totalButton=Button(buttonFrame,text='Total',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
+totalButton=Button(buttonFrame,text='Total',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10,command=total)
 totalButton.grid(row=0,column=0,pady=20,padx=2)
 
 billButton=Button(buttonFrame,text='Bill',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
