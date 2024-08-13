@@ -1,5 +1,14 @@
 from tkinter import * 
+from tkinter import messagebox
 #?functionality
+def bill_area():
+    if nameEntry.get()== '' or phoneEntry.get() == '':
+        messagebox.showerror('Error','Customer Details Required')
+    elif costmeticpriceEntry.get()=='' and grocerypriceEntry.get()=='' and drinkspriceEntry.get()=='':
+        messagebox.showerror('Error','No item Selected')
+    elif costmeticpriceEntry.get()=='GHS 0' and grocerypriceEntry.get()=='GHS 0' and drinkspriceEntry.get()=='GHS 0':
+        messagebox.showerror('Error','No Products Selected')    
+
 def total():
     #*Cosmetics price calculation
     soapprice=int(bathsoapEntry.get())*20
@@ -273,7 +282,7 @@ buttonFrame.grid(row=0,column=4,rowspan=3)
 totalButton=Button(buttonFrame,text='Total',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10,command=total)
 totalButton.grid(row=0,column=0,pady=20,padx=2)
 
-billButton=Button(buttonFrame,text='Bill',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
+billButton=Button(buttonFrame,text='Bill',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10,command=bill_area)
 billButton.grid(row=0,column=1,pady=20,padx=2)
 
 emailButton=Button(buttonFrame,text='Email',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
