@@ -10,7 +10,12 @@ def total():
     bodylotionprice=int(bodylotionEntry.get())*60
 
     totalcosmeticprice=soapprice+facecreamprice+facewashprice+hairsprayprice+hairgelprice+bodylotionprice
+    costmeticpriceEntry.delete(0,END)
     costmeticpriceEntry.insert(0,'GHS' +str(totalcosmeticprice))
+    cosmetictax=totalcosmeticprice*0.05
+    cosmetictaxEntry.delete(0,END)
+    cosmetictaxEntry.insert(0,'GHS'+str(cosmetictax))
+    
 
     #*Grocery Price calculation
     riceprice=int(riceEntry.get())*70
@@ -21,7 +26,11 @@ def total():
     wheatprice=int(wheatEntry.get())*45
 
     totalgroceryprice=riceprice+oilprice+coffeeprice+teaprice+sugarprice+wheatprice
+    grocerypriceEntry.delete(0,END)
     grocerypriceEntry.insert(0,'GHS' +str(totalgroceryprice))
+    grocerytax=totalgroceryprice*0.07
+    grocerytaxEntry.delete(0,END)
+    grocerytaxEntry.insert(0,'GHS'+str(grocerytax))
 
     #*Cold Drink Price calculation
     maazaprice=int(maazaEntry.get())*5
@@ -32,7 +41,11 @@ def total():
     spriteprice=int(spriteEntry.get())*7
 
     totaldrinksprice=maazaprice+pepsiprice+dewprice+fantaprice+cokeprice+spriteprice
+    drinkspriceEntry.delete(0,END)
     drinkspriceEntry.insert(0,'GHS' + str(totaldrinksprice))
+    drinkstax=totaldrinksprice*0.02
+    drinkstaxEntry.delete(0,END)
+    drinkstaxEntry.insert(0,'GHS'+str(drinkstax))
 #! GUI Port
 root=Tk()
 root.title("Reatail Billing System")
@@ -151,7 +164,7 @@ sugarEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 sugarEntry.grid(row=4,column=1,pady=9,padx=10)
 sugarEntry.insert(0,0)
 
-wheatLabel=Label(groceryFrame,text='Rice:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+wheatLabel=Label(groceryFrame,text='Wheat:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 wheatLabel.grid(row=5,column=0,pady=9,padx=10,sticky="w")
 
 wheatEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
@@ -236,11 +249,11 @@ drinkspriceLabel.grid(row=2,column=0,pady=9,padx=10,sticky="w")
 drinkspriceEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 drinkspriceEntry.grid(row=2,column=1,pady=9,padx=10)
 
-costmetaxLabel=Label(billmenuFrame,text='Costmetic Tax:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
-costmetaxLabel.grid(row=0,column=2,pady=9,padx=10,sticky="w")
+cosmetictaxLabel=Label(billmenuFrame,text='Costmetic Tax:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+cosmetictaxLabel.grid(row=0,column=2,pady=9,padx=10,sticky="w")
 
-costmetaxEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
-costmetaxEntry.grid(row=0,column=3,pady=9,padx=10)
+cosmetictaxEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+cosmetictaxEntry.grid(row=0,column=3,pady=9,padx=10)
 
 grocerytaxLabel=Label(billmenuFrame,text='Grocery Tax:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 grocerytaxLabel.grid(row=1,column=2,pady=9,padx=10,sticky="w")
@@ -248,11 +261,11 @@ grocerytaxLabel.grid(row=1,column=2,pady=9,padx=10,sticky="w")
 grocerytaxEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 grocerytaxEntry.grid(row=1,column=3,pady=9,padx=10)
 
-drinksTaxLabel=Label(billmenuFrame,text='Cold Drinks Tax:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
-drinksTaxLabel.grid(row=2,column=2,pady=9,padx=10,sticky="w")
+drinkstaxLabel=Label(billmenuFrame,text='Cold Drinks Tax:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
+drinkstaxLabel.grid(row=2,column=2,pady=9,padx=10,sticky="w")
 
-drinksTaxEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
-drinksTaxEntry.grid(row=2,column=3,pady=9,padx=10)
+drinkstaxEntry=Entry(billmenuFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+drinkstaxEntry.grid(row=2,column=3,pady=9,padx=10)
 
 buttonFrame=Frame(billmenuFrame,bd=8,relief=GROOVE)
 buttonFrame.grid(row=0,column=4,rowspan=3)
