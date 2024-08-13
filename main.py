@@ -1,6 +1,7 @@
 from tkinter import * 
 #functionality
 def total():
+    #*Cosmetics price calculation
     soapprice=int(bathsoapEntry.get())*20
     facecreamprice=int(facecreamEntry.get())*30
     facewashprice=int(facewashEntry.get())*25
@@ -9,8 +10,30 @@ def total():
     bodylotionprice=int(bodylotionEntry.get())*60
 
     totalcosmeticprice=soapprice+facecreamprice+facewashprice+hairsprayprice+hairgelprice+bodylotionprice
-    costmeticpriceEntry.insert(0,'GHS'+str(totalcosmeticprice))
-# GUI Port
+    costmeticpriceEntry.insert(0,'GHS' +str(totalcosmeticprice))
+
+    #*Grocery Price calculation
+    riceprice=int(riceEntry.get())*70
+    oilprice=int(oilEntry.get())*45
+    coffeeprice=int(coffeeEntry.get())*25
+    teaprice=int(teaEntry.get())*15
+    sugarprice=int(sugarEntry.get())*32
+    wheatprice=int(wheatEntry.get())*45
+
+    totalgroceryprice=riceprice+oilprice+coffeeprice+teaprice+sugarprice+wheatprice
+    grocerypriceEntry.insert(0,'GHS' +str(totalgroceryprice))
+
+    #*Cold Drink Price calculation
+    maazaprice=int(maazaEntry.get())*5
+    pepsiprice=int(pepisEntry.get())*7
+    dewprice=int(dewEntry.get())*6
+    fantaprice=int(fantaEntry.get())*8
+    cokeprice=int(cokeEntry.get())*10
+    spriteprice=int(spriteEntry.get())*7
+
+    totaldrinksprice=maazaprice+pepsiprice+dewprice+fantaprice+cokeprice+spriteprice
+    drinkspriceEntry.insert(0,'GHS' + str(totaldrinksprice))
+#! GUI Port
 root=Tk()
 root.title("Reatail Billing System")
 root.geometry("1350x820")
@@ -98,36 +121,42 @@ riceLabel.grid(row=0,column=0,pady=9,padx=10,sticky="w")
 
 riceEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 riceEntry.grid(row=0,column=1,pady=9,padx=10)
+riceEntry.insert(0,0)
 
 oilLabel=Label(groceryFrame,text='Oil:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 oilLabel.grid(row=1,column=0,pady=9,padx=10,sticky="w")
 
-riceEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
-riceEntry.grid(row=1,column=1,pady=9,padx=10)
+oilEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+oilEntry.grid(row=1,column=1,pady=9,padx=10)
+oilEntry.insert(0,0)
 
 coffeeLabel=Label(groceryFrame,text='Coffee:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 coffeeLabel.grid(row=2,column=0,pady=9,padx=10,sticky="w")
 
 coffeeEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 coffeeEntry.grid(row=2,column=1,pady=9,padx=10)
+coffeeEntry.insert(0,0)
 
 teaLabel=Label(groceryFrame,text='Tea:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 teaLabel.grid(row=3,column=0,pady=9,padx=10,sticky="w")
 
 teaEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 teaEntry.grid(row=3,column=1,pady=9,padx=10)
+teaEntry.insert(0,0)
 
 sugarLabel=Label(groceryFrame,text='Sugar:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 sugarLabel.grid(row=4,column=0,pady=9,padx=10,sticky="w")
 
 sugarEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 sugarEntry.grid(row=4,column=1,pady=9,padx=10)
+sugarEntry.insert(0,0)
 
 wheatLabel=Label(groceryFrame,text='Rice:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 wheatLabel.grid(row=5,column=0,pady=9,padx=10,sticky="w")
 
 wheatEntry=Entry(groceryFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 wheatEntry.grid(row=5,column=1,pady=9,padx=10)
+wheatEntry.insert(0,0)
 
 drinksFrame=LabelFrame(productsFrame,text='Cold Drinks',font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
 drinksFrame.grid(row=0,column=2)
@@ -137,36 +166,42 @@ maazaLabel.grid(row=0,column=0,pady=9,padx=10,sticky="w")
 
 maazaEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 maazaEntry.grid(row=0,column=1,pady=9,padx=10)
+maazaEntry.insert(0,0)
 
 pepisLabel=Label(drinksFrame,text='Pepis:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 pepisLabel.grid(row=1,column=0,pady=9,padx=10,sticky="w")
 
-PepisEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
-PepisEntry.grid(row=1,column=1,pady=9,padx=10)
+pepisEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
+pepisEntry.grid(row=1,column=1,pady=9,padx=10)
+pepisEntry.insert(0,0)
 
 dewLabel=Label(drinksFrame,text='Dew:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 dewLabel.grid(row=2,column=0,pady=9,padx=10,sticky="w")
 
 dewEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 dewEntry.grid(row=2,column=1,pady=9,padx=10)
+dewEntry.insert(0,0)
 
 fantaLabel=Label(drinksFrame,text='Fanta:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 fantaLabel.grid(row=3,column=0,pady=9,padx=10,sticky="w")
 
 fantaEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 fantaEntry.grid(row=3,column=1,pady=9,padx=10)
+fantaEntry.insert(0,0)
 
 cokeLabel=Label(drinksFrame,text='Coca Cola:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 cokeLabel.grid(row=4,column=0,pady=9,padx=10,sticky="w")
 
 cokeEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 cokeEntry.grid(row=4,column=1,pady=9,padx=10)
+cokeEntry.insert(0,0)
 
 spriteLabel=Label(drinksFrame,text='Sprite:', font=("times new roman",15,'bold'),bg='gray20',fg='white')
 spriteLabel.grid(row=5,column=0,pady=9,padx=10,sticky="w")
 
 spriteEntry=Entry(drinksFrame,font=("times new roman",15,'bold'),width=10,bd=7)
 spriteEntry.grid(row=5,column=1,pady=9,padx=10)
+spriteEntry.insert(0,0)
 
 billframe=Frame(productsFrame,bd=8,relief=GROOVE)
 billframe.grid(row=0,column=3,padx=10)
