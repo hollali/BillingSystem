@@ -1,5 +1,5 @@
 from tkinter import * 
-#functionality
+#?functionality
 def total():
     #*Cosmetics price calculation
     soapprice=int(bathsoapEntry.get())*20
