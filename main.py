@@ -13,6 +13,7 @@ def bill_area():
     elif costmeticpriceEntry.get()=='GHS 0\t' and grocerypriceEntry.get()=='GHS 0' and drinkspriceEntry.get()=='GHS 0':
         messagebox.showerror('Error','No Products Selected')
     else:
+        textarea.delete(1.0,END)   
         textarea.insert(END,'\t\tWELCOME CUSTOMER\n')
         textarea.insert(END,f'Bill Number: {billnumber}\n')
         textarea.insert(END,f'Customer Name: {nameEntry.get()}\n')
@@ -31,7 +32,7 @@ def bill_area():
         if bodylotionEntry.get()!='0':
             textarea.insert(END,f'Body Lotion\t\t\t{bodylotionEntry.get()}\t\t\t{bodylotionprice}GHS\n')                               
 
-       #! Grocies
+        #! Grocies
         if riceEntry.get()!='0':
             textarea.insert(END,f'Rice\t\t\t{riceEntry.get()}\t\t\t{riceprice}GHS\n')    
         if oilEntry.get()!='0':
@@ -57,12 +58,22 @@ def bill_area():
         if cokeEntry.get()!='0':
             textarea.insert(END,f'Coca Cola\t\t\t{cokeEntry.get()}\t\t\t{cokeprice}GHS\n')
         if spriteEntry.get()!='0':
-            textarea.insert(END,f'Sprite\t\t\t{cokeEntry.get()}\t\t\t{cokeprice}GHS\n')                                      
+            textarea.insert(END,f'Sprite\t\t\t{spriteEntry.get()}\t\t\t{spriteprice}GHS\n')  
+        textarea.insert(END,'\n******************************************\n')
 
+        if cosmetictaxEntry.get()!='GHS 0.0':
+            textarea.insert(END,f'\n Cosmestics Tax\t\t{cosmetictaxEntry.get()}')
+        if grocerytaxEntry.get()!='GHS 0.0':
+            textarea.insert(END,f'\n Grocery Tax\t\t{grocerytaxEntry.get()}')
+        if drinkstaxEntry.get()!='GHS 0.0':
+            textarea.insert(END,f'\n Drinks Tax\t\t{drinkstaxEntry.get()}')
+        textarea.insert(END,f'\n Total Bill\t\t{totalbill}')
+        textarea.insert(END,'\n******************************************\n')                    
 def total():
     global soapprice,facecreamprice,facewashprice,hairsprayprice,hairgelprice,bodylotionprice
     global riceprice,oilprice,coffeeprice,teaprice,sugarprice,wheatprice
     global maazaprice,pepsiprice,dewprice,fantaprice,cokeprice,spriteprice
+    global totalbill
 
     #*Cosmetics price calculation
     soapprice=int(bathsoapEntry.get())*20
@@ -109,6 +120,8 @@ def total():
     drinkstax=totaldrinksprice*0.02
     drinkstaxEntry.delete(0,END)
     drinkstaxEntry.insert(0,'GHS'+str(drinkstax))
+
+    totalbill=totalcosmeticprice+totalgroceryprice+totaldrinksprice+cosmetictax+grocerytax+drinkstax
 #! GUI Port
 root=Tk()
 root.title("Reatail Billing System")
