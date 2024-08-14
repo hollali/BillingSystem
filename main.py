@@ -1,5 +1,7 @@
 from tkinter import * 
 from tkinter import messagebox
+
+
 #?functionality
 def bill_area():
     if nameEntry.get()== '' or phoneEntry.get() == '':
@@ -7,7 +9,8 @@ def bill_area():
     elif costmeticpriceEntry.get()=='' and grocerypriceEntry.get()=='' and drinkspriceEntry.get()=='':
         messagebox.showerror('Error','No item Selected')
     elif costmeticpriceEntry.get()=='GHS 0' and grocerypriceEntry.get()=='GHS 0' and drinkspriceEntry.get()=='GHS 0':
-        messagebox.showerror('Error','No Products Selected')    
+        messagebox.showerror('Error','No Products Selected')
+
 
 def total():
     #*Cosmetics price calculation
