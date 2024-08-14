@@ -46,7 +46,7 @@ def bill_area():
             textarea.insert(END,f'Wheat\t\t\t{wheatEntry.get()}\t\t\t{wheatprice}GHS\n') 
         
         #! Drinks
-        if maazaprice.get()!='0':
+        if maazaEntry.get()!='0':
             textarea.insert(END,f'Maaza\t\t\t{maazaEntry.get()}\t\t\t{maazaprice}GHS\n')
         if pepisEntry.get()!='0':
             textarea.insert(END,f'Pepsi\t\t\t{pepisEntry.get()}\t\t\t{pepsiprice}GHS\n')
@@ -54,9 +54,9 @@ def bill_area():
             textarea.insert(END,f'Dew\t\t\t{dewEntry.get()}\t\t\t{dewprice}GHS\n')
         if fantaEntry.get()!='0':
             textarea.insert(END,f'Fanta\t\t\t{fantaEntry.get()}\t\t\t{fantaprice}GHS\n')
-        if cokeprice.get()!='0':
+        if cokeEntry.get()!='0':
             textarea.insert(END,f'Coca Cola\t\t\t{cokeEntry.get()}\t\t\t{cokeprice}GHS\n')
-        if spriteprice.get()!='0':
+        if spriteEntry.get()!='0':
             textarea.insert(END,f'Sprite\t\t\t{cokeEntry.get()}\t\t\t{cokeprice}GHS\n')                                      
 
 def total():
