@@ -1,15 +1,23 @@
 from tkinter import * 
 from tkinter import messagebox
-
+import random
 
 #?functionality
+billnumber=random.randint(200,1000)
+
 def bill_area():
     if nameEntry.get()== '' or phoneEntry.get() == '':
         messagebox.showerror('Error','Customer Details Required')
     elif costmeticpriceEntry.get()=='' and grocerypriceEntry.get()=='' and drinkspriceEntry.get()=='':
         messagebox.showerror('Error','No item Selected')
-    elif costmeticpriceEntry.get()=='GHS 0' and grocerypriceEntry.get()=='GHS 0' and drinkspriceEntry.get()=='GHS 0':
+    elif costmeticpriceEntry.get()=='GHS 0\t' and grocerypriceEntry.get()=='GHS 0' and drinkspriceEntry.get()=='GHS 0':
         messagebox.showerror('Error','No Products Selected')
+    else:
+        textarea.insert(END,'\t\tWELCOME CUSTOMER\n')
+        textarea.insert(END,f'Bill Number: {billnumber}\n')
+        textarea.insert(END,f'Customer Name: {nameEntry.get()}\n')
+        textarea.insert(END,f'Customer Photo Number: {phoneEntry.get()}\n') 
+        textarea.insert(END,'\n=======================================================')      
 
 
 def total():
@@ -23,10 +31,10 @@ def total():
 
     totalcosmeticprice=soapprice+facecreamprice+facewashprice+hairsprayprice+hairgelprice+bodylotionprice
     costmeticpriceEntry.delete(0,END)
-    costmeticpriceEntry.insert(0,'GHS' +str(totalcosmeticprice))
+    costmeticpriceEntry.insert(0,'GHS\t' +str(totalcosmeticprice))
     cosmetictax=totalcosmeticprice*0.05
     cosmetictaxEntry.delete(0,END)
-    cosmetictaxEntry.insert(0,'GHS'+str(cosmetictax))
+    cosmetictaxEntry.insert(0,'GHS\t'+str(cosmetictax))
     
 
     #*Grocery Price calculation
@@ -39,10 +47,10 @@ def total():
 
     totalgroceryprice=riceprice+oilprice+coffeeprice+teaprice+sugarprice+wheatprice
     grocerypriceEntry.delete(0,END)
-    grocerypriceEntry.insert(0,'GHS' +str(totalgroceryprice))
+    grocerypriceEntry.insert(0,'GHS\t' +str(totalgroceryprice))
     grocerytax=totalgroceryprice*0.07
     grocerytaxEntry.delete(0,END)
-    grocerytaxEntry.insert(0,'GHS'+str(grocerytax))
+    grocerytaxEntry.insert(0,'GHS\t'+str(grocerytax))
 
     #*Cold Drink Price calculation
     maazaprice=int(maazaEntry.get())*5
@@ -54,10 +62,10 @@ def total():
 
     totaldrinksprice=maazaprice+pepsiprice+dewprice+fantaprice+cokeprice+spriteprice
     drinkspriceEntry.delete(0,END)
-    drinkspriceEntry.insert(0,'GHS' + str(totaldrinksprice))
+    drinkspriceEntry.insert(0,'GHS\t' + str(totaldrinksprice))
     drinkstax=totaldrinksprice*0.02
     drinkstaxEntry.delete(0,END)
-    drinkstaxEntry.insert(0,'GHS'+str(drinkstax))
+    drinkstaxEntry.insert(0,'GHS\t'+str(drinkstax))
 #! GUI Port
 root=Tk()
 root.title("Reatail Billing System")
