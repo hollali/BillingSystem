@@ -1,8 +1,24 @@
 from tkinter import * 
 from tkinter import messagebox
-import random
+import random,os
 
 #?functionality
+
+if not os.path.exists('bills'):
+    os.mkdir('bills')
+
+def save_bill():
+    global billnumber
+    result=messagebox.askyesno('Confirm','Do you want to save this bill?')
+    if result:
+        bill_content=textarea.get(1.0,END)
+    file=open(f'bills/{billnumber}.txt','w')
+    file.write(bill_content)
+    file.close()
+    messagebox.showinfo('Success',f'bill number{billnumber} is saved successfully')
+    billnumber=random.randint(200,1000)
+
+
 billnumber=random.randint(200,1000)
 
 def bill_area():
@@ -68,7 +84,8 @@ def bill_area():
         if drinkstaxEntry.get()!='GHS 0.0':
             textarea.insert(END,f'\n Drinks Tax\t\t{drinkstaxEntry.get()}')
         textarea.insert(END,f'\n Total Bill\t\t{totalbill}')
-        textarea.insert(END,'\n******************************************\n')                    
+        textarea.insert(END,'\n******************************************\n') 
+        save_bill()                   
 def total():
     global soapprice,facecreamprice,facewashprice,hairsprayprice,hairgelprice,bodylotionprice
     global riceprice,oilprice,coffeeprice,teaprice,sugarprice,wheatprice
