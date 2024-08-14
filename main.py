@@ -16,11 +16,16 @@ def bill_area():
         textarea.insert(END,'\t\tWELCOME CUSTOMER\n')
         textarea.insert(END,f'Bill Number: {billnumber}\n')
         textarea.insert(END,f'Customer Name: {nameEntry.get()}\n')
-        textarea.insert(END,f'Customer Photo Number: {phoneEntry.get()}\n') 
-        textarea.insert(END,'\n=======================================================')      
+        textarea.insert(END,f'Customer Phone Number: {phoneEntry.get()}\n') 
+        textarea.insert(END,'\n==========================================================\n')
+        textarea.insert(END,'Product\t\t\tQTY\t\t\tPrice')
+        textarea.insert(END,'\n==========================================================\n')
+        if bathsoapEntry.get()!=0:
+            textarea.insert(END,f'Bath Soap\t\t\t{bathsoapEntry.get()}\t\t\t{soapprice}')      
 
 
 def total():
+    global soapprice
     #*Cosmetics price calculation
     soapprice=int(bathsoapEntry.get())*20
     facecreamprice=int(facecreamEntry.get())*30
@@ -31,10 +36,10 @@ def total():
 
     totalcosmeticprice=soapprice+facecreamprice+facewashprice+hairsprayprice+hairgelprice+bodylotionprice
     costmeticpriceEntry.delete(0,END)
-    costmeticpriceEntry.insert(0,'GHS\t' +str(totalcosmeticprice))
+    costmeticpriceEntry.insert(0,'GHS' +str(totalcosmeticprice))
     cosmetictax=totalcosmeticprice*0.05
     cosmetictaxEntry.delete(0,END)
-    cosmetictaxEntry.insert(0,'GHS\t'+str(cosmetictax))
+    cosmetictaxEntry.insert(0,'GHS'+str(cosmetictax))
     
 
     #*Grocery Price calculation
@@ -47,10 +52,10 @@ def total():
 
     totalgroceryprice=riceprice+oilprice+coffeeprice+teaprice+sugarprice+wheatprice
     grocerypriceEntry.delete(0,END)
-    grocerypriceEntry.insert(0,'GHS\t' +str(totalgroceryprice))
+    grocerypriceEntry.insert(0,'GHS' +str(totalgroceryprice))
     grocerytax=totalgroceryprice*0.07
     grocerytaxEntry.delete(0,END)
-    grocerytaxEntry.insert(0,'GHS\t'+str(grocerytax))
+    grocerytaxEntry.insert(0,'GHS'+str(grocerytax))
 
     #*Cold Drink Price calculation
     maazaprice=int(maazaEntry.get())*5
@@ -62,10 +67,10 @@ def total():
 
     totaldrinksprice=maazaprice+pepsiprice+dewprice+fantaprice+cokeprice+spriteprice
     drinkspriceEntry.delete(0,END)
-    drinkspriceEntry.insert(0,'GHS\t' + str(totaldrinksprice))
+    drinkspriceEntry.insert(0,'GHS' + str(totaldrinksprice))
     drinkstax=totaldrinksprice*0.02
     drinkstaxEntry.delete(0,END)
-    drinkstaxEntry.insert(0,'GHS\t'+str(drinkstax))
+    drinkstaxEntry.insert(0,'GHS'+str(drinkstax))
 #! GUI Port
 root=Tk()
 root.title("Reatail Billing System")
