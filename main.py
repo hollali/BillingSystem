@@ -20,12 +20,20 @@ def bill_area():
         textarea.insert(END,'\n==========================================================\n')
         textarea.insert(END,'Product\t\t\tQTY\t\t\tPrice')
         textarea.insert(END,'\n==========================================================\n')
-        if bathsoapEntry.get()!=0:
-            textarea.insert(END,f'Bath Soap\t\t\t{bathsoapEntry.get()}\t\t\t{soapprice}')      
+        if bathsoapEntry.get()!='0':
+            textarea.insert(END,f'Bath Soap\t\t\t{bathsoapEntry.get()}\t\t\t{soapprice}GHS')
+        if facecreamEntry.get()!='0':
+            textarea.insert(END,f'Face Cream\t\t\t{facecreamEntry.get()}\t\t\t{facecreamprice}GHS')
+        if facewashEntry.get()!='0':
+            textarea.insert(END,f'Face Wash\t\t\t{facewashEntry.get()}\t\t\t{facewashprice}GHS')
+        if hairgelEntry.get()!='0':
+            textarea.insert(END,f'Hair Gel\t\t\t{hairgelEntry.get()}\t\t\t{hairgelprice}GHS')
+        if bodylotionEntry.get()!='0':
+            textarea.insert(END,f'Body Lotion\t\t\t{facewashEntry.get()}\t\t\t{bodylotionprice}GHS')                                
 
 
 def total():
-    global soapprice
+    global soapprice,facecreamprice,facewashprice,hairsprayprice,hairgelprice,bodylotionprice
     #*Cosmetics price calculation
     soapprice=int(bathsoapEntry.get())*20
     facecreamprice=int(facecreamEntry.get())*30
