@@ -29,29 +29,30 @@ def bill_area():
         if hairgelEntry.get()!='0':
             textarea.insert(END,f'Hair Gel\t\t\t{hairgelEntry.get()}\t\t\t{hairgelprice}GHS\n')
         if bodylotionEntry.get()!='0':
-            textarea.insert(END,f'Body Lotion\t\t\t{facewashEntry.get()}\t\t\t{bodylotionprice}GHS\n')                               
+            textarea.insert(END,f'Body Lotion\t\t\t{bodylotionEntry.get()}\t\t\t{bodylotionprice}GHS\n')                               
 
+       #! Grocies
         if riceEntry.get()!='0':
             textarea.insert(END,f'Rice\t\t\t{riceEntry.get()}\t\t\t{riceprice}GHS\n')    
         if oilEntry.get()!='0':
             textarea.insert(END,f'Oil\t\t\t{oilEntry.get()}\t\t\t{oilprice}GHS\n')     
-        if coffeeprice.get()!='0':
+        if coffeeEntry.get()!='0':
             textarea.insert(END,f'Coffee\t\t\t{coffeeEntry.get()}\t\t\t{coffeeprice}GHS\n')
-        if teaprice.get()!='0':
+        if teaEntry.get()!='0':
             textarea.insert(END,f'Tea\t\t\t{teaEntry.get()}\t\t\t{teaprice}GHS\n')
-        if sugarprice.get()!='0':
+        if sugarEntry.get()!='0':
             textarea.insert(END,f'Sugar\t\t\t{sugarEntry.get()}\t\t\t{sugarprice}GHS\n')
-        if wheatprice.get()!='0':
+        if wheatEntry.get()!='0':
             textarea.insert(END,f'Wheat\t\t\t{wheatEntry.get()}\t\t\t{wheatprice}GHS\n') 
         
         #! Drinks
         if maazaprice.get()!='0':
             textarea.insert(END,f'Maaza\t\t\t{maazaEntry.get()}\t\t\t{maazaprice}GHS\n')
-        if pepsiprice.get()!='0':
+        if pepisEntry.get()!='0':
             textarea.insert(END,f'Pepsi\t\t\t{pepisEntry.get()}\t\t\t{pepsiprice}GHS\n')
-        if dewprice.get()!='0':
+        if dewEntry.get()!='0':
             textarea.insert(END,f'Dew\t\t\t{dewEntry.get()}\t\t\t{dewprice}GHS\n')
-        if fantaprice.get()!='0':
+        if fantaEntry.get()!='0':
             textarea.insert(END,f'Fanta\t\t\t{fantaEntry.get()}\t\t\t{fantaprice}GHS\n')
         if cokeprice.get()!='0':
             textarea.insert(END,f'Coca Cola\t\t\t{cokeEntry.get()}\t\t\t{cokeprice}GHS\n')
