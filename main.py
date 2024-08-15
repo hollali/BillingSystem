@@ -3,6 +3,7 @@ from tkinter import messagebox
 import random,os,tempfile
 
 #?functionality
+#!This block of code is to able print on Windows
 
 def print_bill():
     if textarea.get(1.0,END)=='\n':
