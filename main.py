@@ -1,8 +1,17 @@
 from tkinter import * 
 from tkinter import messagebox
-import random,os
+import random,os,tempfile
 
 #?functionality
+
+def print_bill():
+    if textarea.get(1.0,END)=='\n':
+        messagebox.showerror('Error','Bill is empty')
+    else: 
+        file=tempfile.mktemp('.txt')
+        open(file,'w').write(textarea.get(1.0,END))
+        os.startfile(file,'print')   
+
 
 def search_bill():
     for i in os.listdir('bills/'):
@@ -384,7 +393,7 @@ billButton.grid(row=0,column=1,pady=20,padx=2)
 emailButton=Button(buttonFrame,text='Email',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
 emailButton.grid(row=0,column=2,pady=20,padx=2)
 
-printButton=Button(buttonFrame,text='Print',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
+printButton=Button(buttonFrame,text='Print',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10,command=print_bill)
 printButton.grid(row=0,column=3,pady=20,padx=2)
 
 clearButton=Button(buttonFrame,text='Clear',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
