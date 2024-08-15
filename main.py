@@ -12,11 +12,11 @@ def save_bill():
     result=messagebox.askyesno('Confirm','Do you want to save this bill?')
     if result:
         bill_content=textarea.get(1.0,END)
-    file=open(f'bills/{billnumber}.txt','w')
-    file.write(bill_content)
-    file.close()
-    messagebox.showinfo('Success',f'bill number{billnumber} is saved successfully')
-    billnumber=random.randint(200,1000)
+        file=open(f'bills/{billnumber}.txt','w')
+        file.write(bill_content)
+        file.close()
+        messagebox.showinfo('Success',f'bill number{billnumber} is saved successfully')
+        billnumber=random.randint(200,1000)
 
 
 billnumber=random.randint(200,1000)

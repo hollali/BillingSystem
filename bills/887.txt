@@ -1,0 +1,22 @@
+		WELCOME CUSTOMER
+Bill Number: 887
+Customer Name: hollali
+Customer Phone Number: 0243567789
+
+==========================================================
+Product			QTY			Price
+==========================================================
+Bath Soap			1			20GHS
+Sugar			1			32GHS
+Dew			1			6GHS
+Coca Cola			1			10GHS
+Sprite			1			7GHS
+
+******************************************
+
+ Cosmestics Tax		GHS3.5
+ Grocery Tax		GHS2.24
+ Drinks Tax		GHS0.46
+ Total Bill		131.20000000000002
+******************************************
+
