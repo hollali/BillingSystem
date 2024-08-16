@@ -17,6 +17,7 @@ def print_bill():
         open(file,'w').write(textarea.get(1.0,END))
         os.startfile(file,'print')   
 """
+
 #!This block of code is to able print on all operating system
 def print_bill():
     if textarea.get(1.0, END) == '\n':
@@ -40,6 +41,7 @@ def print_bill():
         # Clean up the temporary file
         os.remove(file)
 
+#* Search Bill Function
 def search_bill():
     for i in os.listdir('bills/'):
         if i.split('.')[0]==billnumberEntry.get():
@@ -55,6 +57,7 @@ def search_bill():
 if not os.path.exists('bills'):
     os.mkdir('bills')
 
+#* Save bill
 def save_bill():
     global billnumber
     result=messagebox.askyesno('Confirm','Do you want to save this bill?')
@@ -69,6 +72,7 @@ def save_bill():
 
 billnumber=random.randint(200,1000)
 
+#*Bill Area
 def bill_area():
     if nameEntry.get()== '' or phoneEntry.get() == '':
         messagebox.showerror('Error','Customer Details Required')
@@ -123,7 +127,7 @@ def bill_area():
             textarea.insert(END,f'Coca Cola\t\t\t{cokeEntry.get()}\t\t\t{cokeprice}GHS\n')
         if spriteEntry.get()!='0':
             textarea.insert(END,f'Sprite\t\t\t{spriteEntry.get()}\t\t\t{spriteprice}GHS\n')  
-        textarea.insert(END,'\n******************************************\n')
+        textarea.insert(END,'\n*************************************************\n')
 
         if cosmetictaxEntry.get()!='GHS 0.0':
             textarea.insert(END,f'\n Cosmestics Tax\t\t{cosmetictaxEntry.get()}')
@@ -132,8 +136,10 @@ def bill_area():
         if drinkstaxEntry.get()!='GHS 0.0':
             textarea.insert(END,f'\n Drinks Tax\t\t{drinkstaxEntry.get()}')
         textarea.insert(END,f'\n Total Bill\t\t{totalbill}')
-        textarea.insert(END,'\n******************************************\n') 
-        save_bill()                   
+        textarea.insert(END,'\n*************************************************\n') 
+        save_bill()
+
+#*Total Function                           
 def total():
     global soapprice,facecreamprice,facewashprice,hairsprayprice,hairgelprice,bodylotionprice
     global riceprice,oilprice,coffeeprice,teaprice,sugarprice,wheatprice
@@ -167,7 +173,7 @@ def total():
     totalgroceryprice=riceprice+oilprice+coffeeprice+teaprice+sugarprice+wheatprice
     grocerypriceEntry.delete(0,END)
     grocerypriceEntry.insert(0,'GHS' +str(totalgroceryprice))
-    grocerytax=totalgroceryprice*0.07
+    grocerytax=totalgroceryprice*0.8
     grocerytaxEntry.delete(0,END)
     grocerytaxEntry.insert(0,'GHS'+str(grocerytax))
 
@@ -187,6 +193,7 @@ def total():
     drinkstaxEntry.insert(0,'GHS'+str(drinkstax))
 
     totalbill=totalcosmeticprice+totalgroceryprice+totaldrinksprice+cosmetictax+grocerytax+drinkstax
+
 #! GUI Port
 root=Tk()
 root.title("Reatail Billing System")
