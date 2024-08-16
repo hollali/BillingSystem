@@ -2,15 +2,89 @@ from tkinter import *
 import platform
 import subprocess
 from tkinter import messagebox
-import random,os,tempfile
+import random,os,tempfile,smtplib
 
 #?functionality
+#!Clear Button Function
+def clear():
+    bathsoapEntry.insert(0,0)
+    facecreamEntry.insert(0,0)
+    facewashEntry.insert(0,0)
+    hairsprayEntry.insert(0,0)
+    hairgelEntry.insert(0,0)
+    bodylotionEntry.insert(0,0)
+
+    riceEntry.insert(0,0)
+    oilEntry.insert(0,0)
+    coffeeEntry.insert(0,0)
+    teaEntry.insert(0,0)
+    sugarEntry.insert(0,0)
+    wheatEntry.insert(0,0)
+
+    maazaEntry.insert(0,0)
+    pepisEntry.insert(0,0)
+    dewEntry.insert(0,0)
+    fantaEntry.insert(0,0)
+    cokeEntry.insert(0,0)
+    spriteEntry.insert(0,0)
+
+    bathsoapEntry.delete(0,END)
+    facecreamEntry.delete(0,END)
+    facewashEntry.delete(0,END)
+    hairsprayEntry.delete(0,END)
+    hairgelEntry.delete(0,END)
+    bodylotionEntry.delete(0,END)
+
+    riceEntry.delete(0,END)
+    oilEntry.delete(0,END)
+    coffeeEntry.delete(0,END)
+    teaEntry.delete(0,END)
+    sugarEntry.delete(0,END)
+    wheatEntry.delete(0,END)
+
+    maazaEntry.delete(0,END)
+    pepisEntry.delete(0,END)
+    dewEntry.delete(0,END)
+    fantaEntry.delete(0,END)
+    cokeEntry.delete(0,END)
+    spriteEntry.delete(0,END)
+
+    cosmetictaxEntry.delete(0,END)
+    grocerytaxEntry.delete(0,END)
+    drinkstaxEntry.delete(0,END)
+
+    costmeticpriceEntry.delete(0,END)
+    grocerypriceEntry.delete(0,END)
+    drinkspriceEntry.delete(0,END)
+
+    nameEntry.delete(0,END)
+    phoneEntry.delete(0,END)
+    billnumberEntry.delete(0,END)
+
+    textarea.delete(1.0,END)
+
+
+
 #*Send Email Function
 def send_email():
+    def send_gmail():
+        try:
+            ob=smtplib.SMTP('smtp.gmail.com',587)
+            ob.starttls()
+            ob.login(senderEntry.get(),passwordEntry.get())
+            message=email_textarea.get(1.0,END)
+            ob.sendmail(senderEntry.get(),recieverEntry.get(),message)
+            ob.quit()
+            messagebox.showinfo("Success","Bill Sucessfully Sent",parent=root1)
+            root1.destroy()
+        except:
+            messagebox.showerror('Error','Something went wrong, Please try again!',parent=root1)     
+
     if textarea.get(1.0,END)=='\n':
         messagebox.showerror('Error','Bill is empty')
     else:
         root1=Toplevel()
+        root1.grab_set()
         root1.title('Send Email')
         root1.config(bg='gray20')
         root1.resizable(0,0)
@@ -27,7 +101,7 @@ def send_email():
         passwordLabel=Label(senderFrame,text="Password",font=('arial',14,'bold'),bg='gray20',fg='white')
         passwordLabel.grid(row=1,column=0,padx=10,pady=8)
 
-        passwordEntry=Entry(senderFrame,font=('arial',14,'bold'),bd=2,width=23,relief=RIDGE)
+        passwordEntry=Entry(senderFrame,font=('arial',14,'bold'),bd=2,width=23,relief=RIDGE,show="#")
         passwordEntry.grid(row=1,column=1,padx=10,pady=8)
 
         recipientFrame=LabelFrame(root1,text='RECIPIENT',font=('arial',16,'bold'),bd=6,bg='gray20',fg='white')
@@ -44,8 +118,10 @@ def send_email():
 
         email_textarea=Text(recipientFrame,font=('arial',14,'bold'),bd=2,relief=SUNKEN,width=42,height=11)
         email_textarea.grid(row=2,column=0,columnspan=2)
+        email_textarea.delete(1.0,END)
+        email_textarea.insert(END,textarea.get(1.0,END).replace('=','').replace('*','').replace('\t\t\t','\t\t'))
 
-        sendButton=Button(root1,text="SEND",font=('arial',16,'bold'),width=15)
+        sendButton=Button(root1,text="SEND",font=('arial',16,'bold'),width=15,command=send_gmail)
         sendButton.grid(row=2,column=0,pady=20)
 
         root1=mainloop()    
@@ -138,6 +214,8 @@ def bill_area():
             textarea.insert(END,f'Face Cream\t\t\t{facecreamEntry.get()}\t\t\t{facecreamprice}GHS\n')
         if facewashEntry.get()!='0':
             textarea.insert(END,f'Face Wash\t\t\t{facewashEntry.get()}\t\t\t{facewashprice}GHS\n')
+        if hairsprayEntry.get()!='0':
+            textarea.insert(END,f'Face Wash\t\t\t{hairsprayEntry.get()}\t\t\t{hairsprayprice}GHS\n')    
         if hairgelEntry.get()!='0':
             textarea.insert(END,f'Hair Gel\t\t\t{hairgelEntry.get()}\t\t\t{hairgelprice}GHS\n')
         if bodylotionEntry.get()!='0':
@@ -473,7 +551,7 @@ emailButton.grid(row=0,column=2,pady=20,padx=2)
 printButton=Button(buttonFrame,text='Print',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10,command=print_bill)
 printButton.grid(row=0,column=3,pady=20,padx=2)
 
-clearButton=Button(buttonFrame,text='Clear',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
+clearButton=Button(buttonFrame,text='Clear',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10,command=clear)
 clearButton.grid(row=0,column=4,pady=20,padx=2)
 
 root.mainloop() 
