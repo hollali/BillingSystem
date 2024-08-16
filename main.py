@@ -4,11 +4,54 @@ import subprocess
 from tkinter import messagebox
 import random,os,tempfile
 
-
 #?functionality
+#*Send Email Function
+def send_email():
+    if textarea.get(1.0,END)=='\n':
+        messagebox.showerror('Error','Bill is empty')
+    else:
+        root1=Toplevel()
+        root1.title('Send Email')
+        root1.config(bg='gray20')
+        root1.resizable(0,0)
 
-#!This block of code is to able print on Windows operating system
+        senderFrame=LabelFrame(root1,text='SENDER',font=('arial',16,'bold'),bd=6,bg='gray20',fg='white')
+        senderFrame.grid(row=0,column=0,padx=40,pady=20)
+
+        senderLabel=Label(senderFrame,text="Sender's Email",font=('arial',14,'bold'),bg='gray20',fg='white')
+        senderLabel.grid(row=0,column=0,padx=10,pady=8)
+
+        senderEntry=Entry(senderFrame,font=('arial',14,'bold'),bd=2,width=23,relief=RIDGE)
+        senderEntry.grid(row=0,column=1,padx=10,pady=8)
+
+        passwordLabel=Label(senderFrame,text="Password",font=('arial',14,'bold'),bg='gray20',fg='white')
+        passwordLabel.grid(row=1,column=0,padx=10,pady=8)
+
+        passwordEntry=Entry(senderFrame,font=('arial',14,'bold'),bd=2,width=23,relief=RIDGE)
+        passwordEntry.grid(row=1,column=1,padx=10,pady=8)
+
+        recipientFrame=LabelFrame(root1,text='RECIPIENT',font=('arial',16,'bold'),bd=6,bg='gray20',fg='white')
+        recipientFrame.grid(row=1,column=0,padx=40,pady=20)
+
+        recieverLabel=Label(recipientFrame,text="Email Address",font=('arial',14,'bold'),bg='gray20',fg='white')
+        recieverLabel.grid(row=0,column=0,padx=10,pady=8)
+
+        recieverEntry=Entry(recipientFrame,font=('arial',14,'bold'),bd=2,width=23,relief=RIDGE)
+        recieverEntry.grid(row=0,column=1,padx=10,pady=8)
+
+        messageLabel=Label(recipientFrame,text="Message",font=('arial',14,'bold'),bg='gray20',fg='white')
+        messageLabel.grid(row=1,column=0,padx=10,pady=8)
+
+        email_textarea=Text(recipientFrame,font=('arial',14,'bold'),bd=2,relief=SUNKEN,width=42,height=11)
+        email_textarea.grid(row=2,column=0,columnspan=2)
+
+        sendButton=Button(root1,text="SEND",font=('arial',16,'bold'),width=15)
+        sendButton.grid(row=2,column=0,pady=20)
+
+        root1=mainloop()    
 """
+#? Print Function
+#!This block of code is to able print on Windows operating system
 def print_bill():
     if textarea.get(1.0,END)=='\n':
         messagebox.showerror('Error','Bill is empty')
@@ -173,7 +216,7 @@ def total():
     totalgroceryprice=riceprice+oilprice+coffeeprice+teaprice+sugarprice+wheatprice
     grocerypriceEntry.delete(0,END)
     grocerypriceEntry.insert(0,'GHS' +str(totalgroceryprice))
-    grocerytax=totalgroceryprice*0.8
+    grocerytax=totalgroceryprice*0.06
     grocerytaxEntry.delete(0,END)
     grocerytaxEntry.insert(0,'GHS'+str(grocerytax))
 
@@ -424,7 +467,7 @@ totalButton.grid(row=0,column=0,pady=20,padx=2)
 billButton=Button(buttonFrame,text='Bill',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10,command=bill_area)
 billButton.grid(row=0,column=1,pady=20,padx=2)
 
-emailButton=Button(buttonFrame,text='Email',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10)
+emailButton=Button(buttonFrame,text='Email',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10,command=send_email)
 emailButton.grid(row=0,column=2,pady=20,padx=2)
 
 printButton=Button(buttonFrame,text='Print',font=('arial',16,'bold'),bg='gray20',fg='white',bd=5,width=8,pady=10,command=print_bill)
