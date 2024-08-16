@@ -34,7 +34,7 @@ Run the application:
 
 bash
 
-    python billing_system.py
+    python BillingSystem.py
 
     Ensure you have an internet connection and a Gmail account configured for less secure apps if you intend to use the email functionality.
 
@@ -86,9 +86,9 @@ Directory Structure
 
 bash
 
-├── README.md           # Documentation file
-├── billing_system.py   # Main application file
-└── bills/              # Directory where saved bills are stored
+├── readme/README.md     # Documentation file
+├── BillingSystem.py     # Main application file
+└── bills/               # Directory where saved bills are stored
 
 Dependencies
 
