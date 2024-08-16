@@ -1,10 +1,14 @@
 from tkinter import * 
+import platform
+import subprocess
 from tkinter import messagebox
 import random,os,tempfile
 
-#?functionality
-#!This block of code is to able print on Windows
 
+#?functionality
+
+#!This block of code is to able print on Windows operating system
+"""
 def print_bill():
     if textarea.get(1.0,END)=='\n':
         messagebox.showerror('Error','Bill is empty')
@@ -12,7 +16,29 @@ def print_bill():
         file=tempfile.mktemp('.txt')
         open(file,'w').write(textarea.get(1.0,END))
         os.startfile(file,'print')   
-
+"""
+#!This block of code is to able print on all operating system
+def print_bill():
+    if textarea.get(1.0, END) == '\n':
+        messagebox.showerror('Error', 'Bill is empty')
+    else:
+        file = tempfile.mktemp('.txt')
+        with open(file, 'w') as f:
+            f.write(textarea.get(1.0, END))
+        
+        system = platform.system()
+        if system == "Windows":
+            os.startfile(file, 'print')
+        else:  # macOS, Linux, and other Unix-like systems
+            try:
+                subprocess.run(['lpr', file], check=True)
+            except subprocess.CalledProcessError:
+                messagebox.showerror('Error', 'Printing failed. No default printer found.')
+            except FileNotFoundError:
+                messagebox.showerror('Error', 'Printing system (lpr) not found.')
+        
+        # Clean up the temporary file
+        os.remove(file)
 
 def search_bill():
     for i in os.listdir('bills/'):
