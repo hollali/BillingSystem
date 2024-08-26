@@ -1,0 +1,23 @@
+		WELCOME CUSTOMER
+Bill Number: 914
+Customer Name: hollai
+Customer Phone Number: 023457666
+
+==========================================================
+Product			QTY			Price
+==========================================================
+Bath Soap			1			20GHS
+Face Wash			1			25GHS
+Sugar			1			32GHS
+Wheat			1			45GHS
+Dew			1			6GHS
+Sprite			1			7GHS
+
+*************************************************
+
+ Cosmestics Tax		GHS2.25
+ Grocery Tax		GHS4.62
+ Drinks Tax		GHS0.26
+ Total Bill		142.13
+*************************************************
+

@@ -3,6 +3,7 @@ Billing System with Tkinter
 
 This project is a graphical user interface (GUI) application built with Python's Tkinter library. The application is designed to manage billing tasks for a small store, allowing the user to input item quantities, calculate totals, print bills, save them to files, and send them via email. The application is also capable of handling bill searches and tax calculations.
 Features
+<img src="./readme-images/Image2.png"/>
 
     Item Entry: Input fields for various cosmetic, grocery, and cold drink items.
     Total Calculation: Automatically calculates the total cost for each category (cosmetics, groceries, and cold drinks) including a configurable tax.
@@ -12,7 +13,7 @@ Features
     Print Bill: The bill can be printed directly from the application. The printing function is compatible with Windows, macOS, and Linux.
     Send Bill via Email: The bill can be sent to a recipient via email using Gmail's SMTP server.
     Clear Functionality: Resets all fields and the bill display area.
-
+<img src="./readme-images/Image3.png"/>
 Requirements
 
     Python 3.x
