@@ -28,7 +28,7 @@ Installation
 
     bash
 
-git clone https://github.com/hollali/billing-system.git
+git clone https://github.com/hollali/BillingSystem.git
 cd BillingSystem
 
 Run the application:
