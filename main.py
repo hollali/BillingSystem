@@ -171,7 +171,7 @@ def search_bill():
             f.close()
             break
         else:
-            messagebox.showerror('Error','Invaild Bill Number')        
+            messagebox.showerror('Error','Invalid Bill Number')        
 
 if not os.path.exists('bills'):
     os.mkdir('bills')
