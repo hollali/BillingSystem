@@ -320,7 +320,7 @@ root=Tk()
 root.title("Reatail Billing System")
 root.geometry("1350x820")
 root.iconbitmap('')
-headingLabel=Label(root,text="Retail Billing System v1.0",font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
+headingLabel=Label(root,text="Retail Billing System v1.1",font=('times new roman',30,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
 headingLabel.pack(fill=X)
 
 customer_details_frame=LabelFrame(root,text="Customer Details",font=('times new roman',15,'bold'),bg='gray20',fg='gold',bd=12,relief=GROOVE)
